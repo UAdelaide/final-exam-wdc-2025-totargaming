@@ -95,6 +95,9 @@ app.get("/api/walkers/summary", async (req, res) => {
       SELECT u.username as walker_username,
       COUNT(wrat.rating_id) as total_ratings,
       AVG(wrat.rating) as average_rating,
+      COUNT(DISTINCT CASE
+        WHEN wr.status = 'completed' THEN wr.request_id
+    END) as completed_walks
 
 
 
