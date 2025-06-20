@@ -12,7 +12,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET || 'defaultsecret',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // Set to true if using HTTPS
+  cookie: { secure: false }
 }));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
