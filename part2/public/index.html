@@ -39,7 +39,8 @@
       },
       async mounted() {
         const res = await fetch('/api/dogs');
-        const
+        const dogs = await res.json();
+        await Promise.all(dogs.map(async))
       }
     }).mount('#app');
   </script>
