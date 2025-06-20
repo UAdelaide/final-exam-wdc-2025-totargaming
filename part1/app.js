@@ -27,7 +27,10 @@ let db;
       password: '',
       database: 'DogWalkService'
     });
-    const [userCount] = awa
+    const [userCount] = await db.execute('SELECT COUNT(*) AS count FROM users');
+    if (userCount[0].count === 0)  {
+      
+    }
   }
 
 })
