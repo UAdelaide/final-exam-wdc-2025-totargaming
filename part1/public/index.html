@@ -74,8 +74,14 @@
                         console.error('Error fetching dog image:', xhr.status, xhr.statusText);
                     }
                 }
-                xhr.pn
-            }
+                xhr.onerror = () => {
+                    console.error('Network error while fetching dog image');
+                }
+                xhr.send();
+            },
+            changeDog() {
+                this.fetchDogImage();
+                alert('Dog image changed!');
           }
       }).mount('#app');
     </script>
