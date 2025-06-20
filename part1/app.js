@@ -97,6 +97,8 @@ app.get("/api/walkers/summary", async (req, res) => {
     r.average_rating,
     IFNULL(c.completed_walks, 0)                 AS completed_walks
 FROM Users AS u
+LEFT JOIN (
+    SELECT
 
     `);
     res.json(summary);
