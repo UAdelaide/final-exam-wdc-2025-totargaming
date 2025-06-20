@@ -61,7 +61,8 @@
           methods: {
             fetchDogImage() {
                 const xhr = new XMLHttpRequest();
-                
+                xhr.open('GET', 'https://dog.ceo/api/breeds/image/random',true);
+                xhr.onreadystatechange 
             }
           }
       }).mount('#app');
