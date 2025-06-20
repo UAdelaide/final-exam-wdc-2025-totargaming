@@ -50,7 +50,9 @@ let db;
         await db.execute(`INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
         ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Bella') AND status = 'accepted'), (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
         ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Luna') AND status = 'completed'), (SELECT user_id FROM Users WHERE username = 'davidwalker'), 'accepted')`);
-        
+        await db.execute(`INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
+        ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Luna') AND status = 'completed'), (SELECT user_id FROM Users WHERE username = 'davidwalker'), (SELECT user_id FROM Users WHERE username = 'emma123'), 5, 'Excellent walk!'),
+        ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Bella') AND status = 'accepted'), (SELECT user_id FROM Users WHERE username = 'bobwalker'), (SELECT user_id FROM Users WHERE username = 'carol123'), 4, 'Great service')`);
       }
   }
 
