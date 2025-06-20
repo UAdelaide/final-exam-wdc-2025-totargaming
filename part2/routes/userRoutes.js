@@ -77,6 +77,11 @@ router.get('/logout', (req, res) => {
     res.redirect('/index.html'); // Redirect to the home page
   });
 });
-router.get('/my-dogs', async (req,res) => {)
+router.get('/my-dogs', async (req,res) => {
+  if (!req.session.user || req.session.user.role !== 'owner') {
+    return res.status(403).json({ error: 'Access denied' });
+  }
+  try {
+    const [rows] = await db.query(`
 
 module.exports = router;
