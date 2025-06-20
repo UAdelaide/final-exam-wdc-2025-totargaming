@@ -99,6 +99,12 @@ app.get("/api/walkers/summary", async (req, res) => {
 FROM Users AS u
 LEFT JOIN (
     SELECT
+        walker_id,
+        COUNT(*)            AS total_ratings,
+        AVG(rating)         AS average_rating
+    FROM WalkRatings
+    GROUP BY walker_id
+) AS r  ON r.walker_id = u.user_id
 
     `);
     res.json(summary);
