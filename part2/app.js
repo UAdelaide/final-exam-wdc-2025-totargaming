@@ -20,6 +20,6 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-app.get()
+app.get('api/dogs', async (req,res))
 // Export the app instead of listening here
 module.exports = app;
