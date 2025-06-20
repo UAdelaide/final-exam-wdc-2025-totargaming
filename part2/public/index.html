@@ -42,8 +42,10 @@
         const dogs = await res.json();
         await Promise.all(dogs.map(async (dog) => {
           try {
-
-          } 
+            const imageRes = await fetch()
+          } catch (error) {
+            console.error('Error fetching dog image:', error);
+          }
         }))
       }
     }).mount('#app');
