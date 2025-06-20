@@ -48,7 +48,8 @@
           } catch (error) {
             console.error('Error fetching dog image:', error);
           }
-        }))
+        }));
+        this.dogs = dogs;
       }
     }).mount('#app');
   </script>
