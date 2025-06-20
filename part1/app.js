@@ -90,6 +90,7 @@ app.get("/api/walkrequests/open", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch open walk requests" });
   }
 });
+// API endpoint to get walker summary
 app.get("/api/walkers/summary", async (req, res) => {
   try {
     const [summary] = await db.execute(`
