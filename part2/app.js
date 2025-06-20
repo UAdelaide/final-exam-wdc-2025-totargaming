@@ -44,10 +44,10 @@ app.get('/api/dogs', async (req,res) => {
     }
 });
 app.get('/owner-dashboard.html', requireLogin, requireRole('owner'), (req, res) => {
-    res.render('owner-dashboard');
+    res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 });
 app.get('/walker-dashboard.html', requireLogin, requireRole('walker'), (req, res) => {
-    res.render('walker-dashboard');
+    res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
 });
 // Export the app instead of listening here
 module.exports = app;
