@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
     `, [username, password]);
 
     if (rows.length === 0) {
-      // Onfailure, redirect to index.html with error
+      // on failure, redirect to index.html with error
       return res.redirect('/index.html?error=invalid');
     }
     req.session.user = {
