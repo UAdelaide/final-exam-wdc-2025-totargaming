@@ -1,229 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dog Walking Service - Dog of the Day</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <style>
-      body {
-        font-family: "Comic Sans MS", cursive;
-        background: linear-gradient(
-          45deg,
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dog Walking Service - Dog of the Day</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive;
+      background: linear-gradient(45deg,
           red,
           blue,
           green,
           yellow,
-          purple
-        );
-        background-size: 400% 400%;
-        animation: rainbow 2s infinite;
-        margin: 0;
-        padding: 20px;
-      }
-      @keyframes rainbow {
-        0% {
-          background-position: 0% 50%;
-        }
-        100% {
-          background-position: 100% 50%;
-        }
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: white;
-        border-radius: 20px;
-        border: 10px;
-      }
-      .header {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      .header h1 {
-        font-size: 2.5em;
-        color: red;
-        animation: bounce 1s infinite;
-      }
-      @keyframes bounce {
-        0%, 100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-      .dog-card {
-        background:  linear-gradient(45deg, pink, lightblue);
-        border-radius: 15px;
-          padding: 20px;
-          margin: 20px;
-          text-align: center;
-      }
-      .dog-image {
-          width: 250px;
-          height: 250px;
-          border-radius: 50%;
-          object-fit: cover;
-          border: 5px solid white;
-          margin: 0 auto 20px;
-          display: block;
-      }
-      .dog-info {
-        font-size: 1.2em;
-        color: darkblue;
-      }
-      .dog-name {
-        font-size: 2em;
-        font-weight: bold;
-        color: darkred;
-        margin-bottom: 10px;
-      }
-      .action-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-      }
-      .btn {
-        background-color: yellow;
-        color: black;
-        padding: 10px 20px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-      .hidden-text {
-        position: absolute;
-        left: -9999px;
-      }
-      .flashing-text {
-        color: red;
-        font-weight: bold;
-        animation: flash 1s infinite;
-      }
-      @keyframes flash {
-        0%, 100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.5;
-        }
-      }
-      .info-box {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-      }
-      .info-box h3 {
-        font-size: 1.5em;
-        color: darkgreen;
+          purple);
+      background-size: 400% 400%;
+      animation: rainbow 2s infinite;
+      margin: 0;
+      padding: 20px;
+    }
+
+    @keyframes rainbow {
+      0% {
+        background-position: 0% 50%;
       }
 
-    </style>
-  </head>
+      100% {
+        background-position: 100% 50%;
+      }
+    }
 
-  <body>
-    <div id="app">
-      <div class="container">
-        <div class="header">
-          <h1>DOG WALKING SERVICE</h1>
-          <p class="flashing-text">SPECIAL OFFERRRR</p>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 20px;
+      border: 10px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      color: red;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .dog-card {
+      background: linear-gradient(45deg, pink, lightblue);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .dog-image {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .dog-info {
+      font-size: 1.2em;
+      color: darkblue;
+    }
+
+    .dog-name {
+      font-size: 2em;
+      font-weight: bold;
+      color: darkred;
+      margin-bottom: 10px;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      background-color: yellow;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .hidden-text {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .flashing-text {
+      color: red;
+      font-weight: bold;
+      animation: flash 1s infinite;
+    }
+
+    @keyframes flash {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .info-box {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .info-box h3 {
+      font-size: 1.5em;
+      color: darkgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="header">
+        <h1>DOG WALKING SERVICE</h1>
+        <p class="flashing-text">SPECIAL OFFERRRR</p>
+      </div>
+      <div class="info-box">
+        <div class="info-box">
+          <h3>Today's Special</h3>
+          <p>50% OFFFFF</p>
         </div>
         <div class="info-box">
-          <div class="info-box">
-            <h3>Today's Special</h3>
-            <p>50% OFFFFF</p>
-          </div>
-          <div class="info-box">
-            <h3>Weather</h3>
-            <p>Sunny, 25°C</p>
-          </div>
+          <h3>Weather</h3>
+          <p>Sunny, 25°C</p>
         </div>
-        <div class="dog-card">
-          <img :src="dogImage" class="dog-image" @click="changeDog" />
-          <div class="dog-info">
-            <div class="dog-name">{{ dogName }}</div>
-            <p><strong>Breed:</strong> {{ dogBreed }}</p>
-            <p><strong>Size:</strong> {{ dogSize }}</p>
-            <p><strong>Age:</strong> {{ dogAge }} years</p>
-            <p><strong>Activity:</strong> {{ dogActivity }}</p>
-          </div>
-          <div class="action-buttons">
-            <div class="btn" @click="bookWalk">Book Walk</div>
-            <div class="btn" @click="viewProfiles">View Profiles</div>
-          </div>
-          <div class="hidden-text">
-            Important Information for screen readers?
-          </div>
+      </div>
+      <div class="dog-card">
+        <img :src="dogImage" class="dog-image" @click="changeDog" />
+        <div class="dog-info">
+          <div class="dog-name">{{ dogName }}</div>
+          <p><strong>Breed:</strong> {{ dogBreed }}</p>
+          <p><strong>Size:</strong> {{ dogSize }}</p>
+          <p><strong>Age:</strong> {{ dogAge }} years</p>
+          <p><strong>Activity:</strong> {{ dogActivity }}</p>
+        </div>
+        <div class="action-buttons">
+          <div class="btn" @click="bookWalk">Book Walk</div>
+          <div class="btn" @click="viewProfiles">View Profiles</div>
+        </div>
+        <div class="hidden-text">
+          Important Information for screen readers?
         </div>
       </div>
     </div>
-    <script>
-      const { createApp } = Vue;
-      createApp({
-        data() {
-          return {
-            dogImage: "",
-            dogName: "Buddy",
-            dogBreed: "Golden Retriever",
-            dogSize: "Large",
-            dogAge: 3,
-            dogActivity: "Active and playful",
-          };
-        },
-        mounted() {
-          this.fetchDogImage();
-        },
-        methods: {
-          fetchDogImage() {
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "https://dog.ceo/api/breeds/image/random", true);
-            xhr.onreadystatechange = () => {
-              if (xhr.readyState === 4 && xhr.status === 200) {
-                try {
-                  const response = JSON.parse(xhr.responseText);
-                  this.dogImage = response.message;
-                } catch (error) {
-                  console.error("Error parsing JSON:", error);
-                }
-              } else {
-                console.error(
-                  "Error fetching dog image:",
-                  xhr.status,
-                  xhr.statusText
-                );
+  </div>
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          dogImage: "",
+          dogName: "Buddy",
+          dogBreed: "Golden Retriever",
+          dogSize: "Large",
+          dogAge: 3,
+          dogActivity: "Active and playful",
+        };
+      },
+      mounted() {
+        this.fetchDogImage();
+      },
+      methods: {
+        fetchDogImage() {
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "https://dog.ceo/api/breeds/image/random", true);
+          xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              try {
+                const response = JSON.parse(xhr.responseText);
+                this.dogImage = response.message;
+              } catch (error) {
+                console.error("Error parsing JSON:", error);
               }
-            };
-            xhr.onerror = () => {
-              console.error("Network error while fetching dog image");
-            };
-            xhr.send();
-          },
-          changeDog() {
-            this.fetchDogImage();
-            alert("Dog image changed!");
-          },
-          bookWalk() {
-            const confirm = window.confirm(
-              "Do you want to book a walk for " + this.dogName + "?"
-            );
-            if (confirm) {
-              alert("Walk booked! Call 000 to complete!");
-            }
-          },
-          viewProfiles() {
-            alert("Please log in to view profiles.");
-            const username = prompt("Enter your username:");
-            if (username) {
-              alert("Welcome, " + username + "! You can now view profiles.");
             } else {
-              alert("Login canceled.");
+              console.error(
+                "Error fetching dog image:",
+                xhr.status,
+                xhr.statusText
+              );
             }
-          },
+          };
+          xhr.onerror = () => {
+            console.error("Network error while fetching dog image");
+          };
+          xhr.send();
         },
-      }).mount("#app");
-    </script>
-  </body>
+        changeDog() {
+          this.fetchDogImage();
+          alert("Dog image changed!");
+        },
+        bookWalk() {
+          const confirm = window.confirm(
+            "Do you want to book a walk for " + this.dogName + "?"
+          );
+          if (confirm) {
+            alert("Walk booked! Call 000 to complete!");
+          }
+        },
+        viewProfiles() {
+          alert("Please log in to view profiles.");
+          const username = prompt("Enter your username:");
+          if (username) {
+            alert("Welcome, " + username + "! You can now view profiles.");
+          } else {
+            alert("Login canceled.");
+          }
+        },
+      },
+    }).mount("#app");
+  </script>
+</body>
+
 </html>
