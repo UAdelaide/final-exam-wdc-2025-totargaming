@@ -26,8 +26,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
-  </div>
-  <div id="dogs-app" class="container my-5">
+    <div id="dogs-app" class="container my-5">
     <h2 class="mb-3">All Registered Dogs</h2>
     <table v-if="dogs.length" class="table table-bordered table-striped">
       <thead>
@@ -50,6 +49,7 @@
       </tbody>
     </table>
     <p v-else>No dogs registered yet.</p>
+  </div>
   </div>
   <script>
     const { createApp } = Vue;
