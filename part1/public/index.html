@@ -5,7 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dog Walking Service - Dog of the Day</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  
+    <style>
+      body {
+        font-family: "Comic Sans MS", cursive;
+        background-color: linear-gradient(
+          45deg,
+          red,
+          blue,
+          green,
+          yellow,
+          purple
+        );
+        background-size: 400% 400%;
+        animation: rainbow 2s infinite;
+        margin: 0;
+        padding: 20px;
+      }
+      @keyframes rainbow {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 20px;
+        border: 10px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .header h1 {
+        font-size: 2.5em;
+        color: red;
+        animation: bounce 1s infinite;
+      }
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .dog-card {
+        background:  linear-gradient(45deg, pink, lightblue);
+        border-radius: 15px;
+          padding: 20px;
+          margin: 20px;
+          text-align: center;
+      }
+      .dog-image {
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 5px solid white;
+          margin: 0 auto 20px;
+          display: block;
+      }
+      .dog-info {
+        font-size: 1.2em;
+        color: darkblue;
+      }
+      .dog-name {
+        font-size: 2em;
+        font-weight: bold;
+        color: darkred;
+        margin-bottom: 10px;
+      }
+      .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .btn {
+        background-color: yellow;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .hidden-text {
+        position: absolute;
+        left: -9999px;
+      }
+      .flashing-text {
+        color: red;
+        font-weight: bold;
+        animation: flash 1s infinite;
+      }
+      @keyframes flash {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+      .info-box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .info-box h3 {
+        font-size: 1.5em;
+        color: darkgreen;
+      }
+
+    </style>
   </head>
 
   <body>
@@ -26,7 +142,7 @@
           </div>
         </div>
         <div class="dog-card">
-          <img :src="dogImage" class="dog-image" @click="changeDog" />
+          <img :src="dogImage" src=" " class="dog-image" @click="changeDog" />
           <div class="dog-info">
             <div class="dog-name">{{ dogName }}</div>
             <p><strong>Breed:</strong> {{ dogBreed }}</p>
