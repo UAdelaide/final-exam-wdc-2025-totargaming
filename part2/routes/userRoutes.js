@@ -64,7 +64,8 @@ router.post('/login', async (req, res) => {
       res.redirect('/index.html');
     }
   } catch (error) {
-    res.status(500).json({ error: 'Login failed' });
+    console.error('Login error:', error);
+    res.redirect('/index.html?error=server');
   }
 });
 
