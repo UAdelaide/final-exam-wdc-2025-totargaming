@@ -60,7 +60,8 @@ router.post('/login', async (req, res) => {
     };
     if (req.session.user.role === 'owner') {
       return res.redirect('/owner-dashboard.html');
-    } else if (req.session.user.role === 'walker') {
+    }
+    if (req.session.user.role === 'walker') {
       return res.redirect('/walker-dashboard.html');
     }
 
