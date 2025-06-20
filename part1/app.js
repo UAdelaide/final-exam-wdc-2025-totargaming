@@ -94,7 +94,7 @@ app.get("/api/walkers/summary", async (req, res) => {
 SELECT
     u.username as walker_username,
     IFNULL(r.total_ratings, 0) as total_ratings,
-    r.average_rating,
+    ROUND(AVG(rating), 1) as average_rating,
     IFNULL(c.completed_walks, 0) as completed_walks
 FROM Users as u
 LEFT JOIN (
