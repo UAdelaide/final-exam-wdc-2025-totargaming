@@ -93,6 +93,7 @@ app.get("/api/walkers/summary", async (req, res) => {
     const [summary] = await db.execute(`
       SELECT
     u.username                                   AS walker_username,
+    IFNULL(r.total_ratings, 0)                   AS total_ratings,
 
     `);
     res.json(summary);
