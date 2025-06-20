@@ -106,6 +106,12 @@ LEFT JOIN (
     GROUP BY walker_id
 ) AS r  ON r.walker_id = u.user_id
 LEFT JOIN (
+    SELECT
+        wa.walker_id,
+        COUNT(*)            AS completed_walks
+    FROM WalkApplications AS wa
+    JOIN WalkRequests  AS wr ON wr.request_id = wa.request_id
+    WHERE wa.status = 'accepted'
 
     `);
     res.json(summary);
