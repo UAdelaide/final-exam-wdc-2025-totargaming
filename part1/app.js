@@ -64,6 +64,7 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
 });
+// API endpoint to get all dogs
 app.get("/api/dogs", async (req, res) => {
   try {
     const [dogs] = await db.execute(`
