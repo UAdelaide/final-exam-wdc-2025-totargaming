@@ -112,6 +112,8 @@ LEFT JOIN (
     FROM WalkApplications AS wa
     JOIN WalkRequests  AS wr ON wr.request_id = wa.request_id
     WHERE wa.status = 'accepted'
+      AND wr.status = 'completed'
+    GROUP BY wa.walker_id
 
     `);
     res.json(summary);
