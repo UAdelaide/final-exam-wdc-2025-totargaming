@@ -16,6 +16,14 @@ app.use(session({
   cookie: { secure: false }
 }));
 function requireLogin(req, res, next) {
+  if (!req.session.user) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  next();
+}
+function requireRole(role) {
+    return (req, res, next) => {
+}
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
