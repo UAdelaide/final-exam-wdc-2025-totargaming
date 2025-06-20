@@ -59,9 +59,9 @@ router.post('/login', async (req, res) => {
       role: rows[0].role
     };
     if (req.session.user.role === 'owner') {
-      res.redirect('/owner-dashboard.html');
+      return res.redirect('/owner-dashboard.html');
     } else if (req.session.user.role === 'walker') {
-      res.redirect('/walker-dashboard.html');
+      return res.redirect('/walker-dashboard.html');
     } else {
       res.redirect('/index.html');
     }
