@@ -73,6 +73,9 @@ router.get('/logout', (req, res) => {
     if (err) {
       return res.status(500).json({ error: 'Logout failed' });
     }
-})
+    res.clearCookie('connect.sid'); // Clear the session cookie
+    res.redirect('/index.html'); // Redirect to the home page
+  });
+});
 
 module.exports = router;
