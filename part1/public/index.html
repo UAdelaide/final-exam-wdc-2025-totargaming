@@ -8,25 +8,26 @@
   </head>
   <body>
     <div id="app">
-        <div class="container">
-            <div class="header">
-                <h1>DOG WALKING SERVICE</h1>
-                <p class="flashing-text">SPECIAL OFFERRRR</p>
-            </div>
-            <div class="info-box">
-                <div class="info-box">
-                    <h3>Today's Special</h3>
-                    <p>50% OFFFFF</p>
-                </div>
-                <div class="info-box">
-                    <h3>Weather</h3>
-                    <p>Sunny, 25°C</p>
-                </div>
-            </div>
-            <div class="dog-card">
-                <img :src="dogImage" class="dog-image" @click="changeDog" >
-                        </div>
+      <div class="container">
+        <div class="header">
+          <h1>DOG WALKING SERVICE</h1>
+          <p class="flashing-text">SPECIAL OFFERRRR</p>
         </div>
+        <div class="info-box">
+          <div class="info-box">
+            <h3>Today's Special</h3>
+            <p>50% OFFFFF</p>
+          </div>
+          <div class="info-box">
+            <h3>Weather</h3>
+            <p>Sunny, 25°C</p>
+          </div>
+        </div>
+        <div class="dog-card">
+          <img :src="dogImage" class="dog-image" @click="changeDog" />
+          <div class="dog-info"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
