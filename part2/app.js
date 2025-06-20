@@ -43,6 +43,9 @@ app.get('/api/dogs', async (req,res) => {
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
 });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 app.get('/owner-dashboard.html', requireLogin, requireRole('owner'), (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 });
