@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 app.get('/owner-dashboard', requireLogin, requireRole('owner'), (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 });
-app.get('/walker-dashboard.html', requireLogin, requireRole('walker'), (req, res) => {
+app.get('/walker-dashboard', requireLogin, requireRole('walker'), (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
 });
 // Export the app instead of listening here
