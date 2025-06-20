@@ -48,7 +48,7 @@ let db;
         ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Bella') AND status = 'accepted'), (SELECT user_id FROM Users WHERE username = 'bobwalker'), (SELECT user_id FROM Users WHERE username = 'carol123'), 4, 'Great service')`);
     }
   } catch (error) {
-    //
+    console.error("Database connection failed:", error);
   }
 })();
 app.locals.db = db;
