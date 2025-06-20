@@ -99,6 +99,12 @@ app.get("/api/walkrequests/open", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch open walk requests" });
   }
 });
-app.get()
+app.get('/api/walkers/summary', async (req, res) => {
+  try {
+
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch walker summary" });
+  }
+})
 
 module.exports = app;
