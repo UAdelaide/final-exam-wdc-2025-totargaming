@@ -27,9 +27,10 @@
           <img :src="dogImage" class="dog-image" @click="changeDog" />
           <div class="dog-info">
             <div class="dog-name">{{ dogName }}</div>
-            <p><strong></strong></p>
-            <p></p>
-            <p></p>
+            <p><strong>Breed:</strong> {{ dogBreed }}</p>
+            <p><strong>Size:</strong> {{ dogSize }}</p>
+            <p><strong>Age:</strong> {{ dogAge }} years</p>
+            <p><strong>Owner:</strong> {{ ownerName }}</p>
           </div>
         </div>
       </div>
