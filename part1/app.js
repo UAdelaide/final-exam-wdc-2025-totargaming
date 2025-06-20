@@ -92,6 +92,7 @@ app.get("/api/walkers/summary", async (req, res) => {
   try {
     const [summary] = await db.execute(`
       
+
     `);
     res.json(summary);
   } catch (error) {
