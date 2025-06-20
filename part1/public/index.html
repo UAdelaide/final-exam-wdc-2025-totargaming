@@ -46,15 +46,16 @@
           const {createApp} = Vue;
           createApp({
           data() {
-              dogImage: ''
-              dogName: 'Buddy',
-              dogBreed: 'Golden Retriever',
-              dogSize: 'Large',
-              dogAge: 3,
-              dogActivity: 'Active and playful',
-          }
+              return {
+                  dogImage: '',
+                  dogName: 'Buddy',
+                  dogBreed: 'Golden Retriever',
+                  dogSize: 'Large',
+                  dogAge: 3,
+                  dogActivity: 'Active and playful',
+              }
           },
-      )
+      }).mount('#app');
     </script>
   </body>
 </html>
