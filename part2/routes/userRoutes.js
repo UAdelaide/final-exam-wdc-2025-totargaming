@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
 
     if (rows.length === 0) {
       // on failure, redirect to index.html with error
-      return res.redirect('/index.html?error=invalid');
+      return res.rest.status(401).json({ error: 'Invalid username or password' });
     }
     req.session.user = {
       user_id: rows[0].user_id,
@@ -65,7 +65,7 @@ router.post('/login', async (req, res) => {
     }
   } catch (error) {
     console.error('Login error:', error);
-    res.redirect('/index.html?error=server');
+    res.status(500).json({ error: 'Login failed' });
   }
 });
 
