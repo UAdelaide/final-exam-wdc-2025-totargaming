@@ -58,7 +58,12 @@
           mounted() {
               this.fetchDogImage();
           },
-          met
+          methods: {
+            fetchDogImage() {
+                const xhr = new XMLHttpRequest();
+                
+            }
+          }
       }).mount('#app');
     </script>
   </body>
