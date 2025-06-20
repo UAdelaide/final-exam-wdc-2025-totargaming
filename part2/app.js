@@ -46,7 +46,7 @@ app.get('/api/dogs', async (req,res) => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-app.get('/owner-dashboard.html', requireLogin, requireRole('owner'), (req, res) => {
+app.get('/owner-dashboard', requireLogin, requireRole('owner'), (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 });
 app.get('/walker-dashboard.html', requireLogin, requireRole('walker'), (req, res) => {
