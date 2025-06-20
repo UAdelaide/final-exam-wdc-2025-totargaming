@@ -28,7 +28,7 @@ let db;
       database: 'DogWalkService'
     });
     const [userCount] = await db.execute('SELECT COUNT(*) AS count FROM users');
-    if (userCount[0].count === 0)  {
+    if (userCount[0].count === 0) {
         await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES
         ('alice123', 'alice@example.com', 'hashed123', 'owner'),
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
