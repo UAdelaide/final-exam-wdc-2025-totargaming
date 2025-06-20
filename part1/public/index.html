@@ -84,6 +84,8 @@
                 alert('Dog image changed!');
             },
             bookWalk() {
+                const confirm = window.confirm('Do you want to book a walk for ' + this.dogName + '?');
+                
           }
       }).mount('#app');
     </script>
