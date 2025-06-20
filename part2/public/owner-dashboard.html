@@ -95,7 +95,7 @@
             if (!res.ok) throw new Error('Failed to load dogs');
             dogs.value = await res.json();
           } catch (error) {
-            console.error('Failed to load dogs:', error);
+            error.value = 'Failed to load dogs';
           }
 
         }
@@ -135,12 +135,14 @@
         }
 
         onMounted(() => {
+          loadDogs();
           loadWalks();
         });
 
         return {
           form,
           walks,
+          dogs,
           message,
           error,
           submitWalkRequest
