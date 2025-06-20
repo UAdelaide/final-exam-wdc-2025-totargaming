@@ -49,6 +49,7 @@
         </tr>
       </tbody>
     </table>
+    <p v-else>No dogs registered yet.</p>
   </div>
   <script>
     const { createApp } = Vue;
@@ -66,7 +67,7 @@
           try {
             const imageRes = await fetch('https://dog.ceo/api/breeds/image/random');
             const imageData = await imageRes.json();
-            dog.image = imageData.message;  
+            dog.image = imageData.message;
           } catch (error) {
             console.error('Error fetching dog image:', error);
           }
