@@ -77,6 +77,6 @@ router.get('/logout', (req, res) => {
     res.redirect('/index.html'); // Redirect to the home page
   });
 });
-router.get()
+router.get('/my-dogs', async (req,res) => {)
 
 module.exports = router;
