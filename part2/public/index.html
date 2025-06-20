@@ -37,7 +37,10 @@
           dogs: [],
         };
       },
-      async
+      async mounted() {
+        const res = await fetch('/api/dogs');
+        const
+      }
     }).mount('#app');
   </script>
 
