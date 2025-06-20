@@ -42,7 +42,11 @@ app.get('/api/dogs', async (req,res) => {
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
-app.get()
+app.get('/owner-dashboard.html', requireLogin, requireRole('owner'), (req, res) => {
+    res.render('owner-dashboard');
+});
+app.get('/walker-dashboard.html', requireLogin, requireRole('walker'), (req, res) => {
+    res.render('walker-dashboard');
 });
 // Export the app instead of listening here
 module.exports = app;
