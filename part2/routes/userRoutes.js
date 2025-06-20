@@ -64,12 +64,11 @@ router.post('/login', async (req, res) => {
     if (req.session.user.role === 'walker') {
       return res.redirect('/walker-dashboard.html');
     }
-
     return res.redirect('/index.html');
 
   } catch (error) {
     console.error('Login error:', error);
-    res.status(500).json({ error: 'Login failed' });
+    return res.status(500).json({ error: 'Login failed' });
   }
 });
 router.get('/logout', (req, res) => {
