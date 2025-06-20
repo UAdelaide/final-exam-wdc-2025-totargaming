@@ -47,7 +47,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Buddy' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')), '2025-06-11 14:00:00', 60, 'Central Park', 'open'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Luna' AND owner_id = (SELECT user_id FROM Users WHERE username = 'emma123')), '2025-06-12 10:00:00', 30, 'Riverside Walk', 'completed'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Rocky' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')), '2025-06-13 16:00:00', 45, 'Hilltop Trail', 'open')`);
-          
+        
       }
   }
 
