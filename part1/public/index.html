@@ -94,6 +94,9 @@
                 const username = prompt('Enter your username:');
                 if (username) {
                     alert('Welcome, ' + username + '! You can now view profiles.');
+                } else {
+                    alert('Login canceled.');
+                }
             }
         }
     }).mount('#app');
