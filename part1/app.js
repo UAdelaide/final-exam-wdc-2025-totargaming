@@ -29,7 +29,7 @@ let db;
     });
     const [userCount] = await db.execute('SELECT COUNT(*) AS count FROM users');
     if (userCount[0].count === 0)  {
-      
+      await db.execute()
     }
   }
 
