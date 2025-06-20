@@ -100,8 +100,8 @@ FROM Users as u
 LEFT JOIN (
     SELECT
         walker_id,
-        COUNT(*)            as total_ratings,
-        AVG(rating)         as average_rating
+        COUNT(*) as total_ratings,
+        AVG(rating) as average_rating
     FROM WalkRatings
     GROUP BY walker_id
 ) as r  ON r.walker_id = u.user_id
