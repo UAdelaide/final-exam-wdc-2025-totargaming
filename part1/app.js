@@ -20,7 +20,7 @@ let db;
       password: "",
       database: "DogWalkService"
     });
-    const [userCount] = await db.execute("SELECT COUNT(*) AS count FROM Users");
+    const [userCount] = await db.execute("SELECT COUNT(*) as count FROM Users");
     if (userCount[0].count === 0) {
       await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES
         ('alice123', 'alice@example.com', 'hashed123', 'owner'),
@@ -92,29 +92,29 @@ app.get("/api/walkers/summary", async (req, res) => {
   try {
     const [summary] = await db.execute(`
       SELECT
-    u.username                                   AS walker_username,
-    IFNULL(r.total_ratings, 0)                   AS total_ratings,
+    u.username                                   as walker_username,
+    IFNULL(r.total_ratings, 0)                   as total_ratings,
     r.average_rating,
-    IFNULL(c.completed_walks, 0)                 AS completed_walks
-FROM Users AS u
+    IFNULL(c.completed_walks, 0)                 as completed_walks
+FROM Users as u
 LEFT JOIN (
     SELECT
         walker_id,
-        COUNT(*)            AS total_ratings,
-        AVG(rating)         AS average_rating
+        COUNT(*)            as total_ratings,
+        AVG(rating)         as average_rating
     FROM WalkRatings
     GROUP BY walker_id
-) AS r  ON r.walker_id = u.user_id
+) as r  ON r.walker_id = u.user_id
 LEFT JOIN (
     SELECT
         wa.walker_id,
-        COUNT(*)            AS completed_walks
-    FROM WalkApplications AS wa
-    JOIN WalkRequests  AS wr ON wr.request_id = wa.request_id
+        COUNT(*)            as completed_walks
+    FROM WalkApplications as wa
+    JOIN WalkRequests  as wr ON wr.request_id = wa.request_id
     WHERE wa.status = 'accepted'
       AND wr.status = 'completed'
     GROUP BY wa.walker_id
-) AS c  ON c.walker_id = u.user_id
+) as c  ON c.walker_id = u.user_id
 WHERE u.role = 'walker';
     `);
     res.json(summary);
