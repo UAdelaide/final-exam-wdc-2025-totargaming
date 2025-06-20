@@ -90,7 +90,7 @@ router.get('/my-dogs', async (req,res) => {
     `, [req.session.user.user_id]);
     return res.json(rows);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch dogs' });
+    return res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
 
