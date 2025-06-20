@@ -53,6 +53,10 @@
           try {
             const res = await fetch('/api/users/me');
             if (!res.ok) throw new Error('Failed to fetch user data');
+            const data = await res.json();
+            user.value = data.id;
+          } catch (error) {
+            error.value = error.message;
           }
         }
 
