@@ -90,7 +90,10 @@
                 }
             },
             viewProfiles() {
-                alert('');
+                alert('Please log in to view profiles.');
+                const username = prompt('Enter your username:');
+                if (username) {
+                    alert('Welcome, ' + username + '! You can now view profiles.');
             }
         }
     }).mount('#app');
