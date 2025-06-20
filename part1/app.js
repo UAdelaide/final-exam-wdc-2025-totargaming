@@ -98,6 +98,7 @@ app.get("/api/walkers/summary", async (req, res) => {
       COUNT(DISTINCT CASE
         WHEN wr.status = 'completed' THEN wr.request_id
     END) as completed_walks
+    
 
 
 
