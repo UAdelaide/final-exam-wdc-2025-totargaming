@@ -114,7 +114,8 @@ LEFT JOIN (
     WHERE wa.status = 'accepted'
       AND wr.status = 'completed'
     GROUP BY wa.walker_id
-
+) AS c  ON c.walker_id = u.user_id
+WHERE u.role = 'walker';
     `);
     res.json(summary);
   } catch (error) {
