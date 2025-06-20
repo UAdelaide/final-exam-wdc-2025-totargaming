@@ -75,6 +75,7 @@ app.get("/api/dogs", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch dogs" });
   }
 });
+// API endpoint to get all open walk requests
 app.get("/api/walkrequests/open", async (req, res) => {
   try {
     const [requests] = await db.execute(`
