@@ -59,12 +59,12 @@ router.post('/login', async (req, res) => {
       role: rows[0].role
     };
     if (req.session.user.role === 'owner') {
-      return res.redirect('/owner-dashboard.html');
+      return res.redirect('/owner-dashboard');
     }
     if (req.session.user.role === 'walker') {
-      return res.redirect('/walker-dashboard.html');
+      return res.redirect('/walker-dashboard');
     }
-    return res.redirect('/index.html');
+    return res.redirect('/');
 
   } catch (error) {
     console.error('Login error:', error);
