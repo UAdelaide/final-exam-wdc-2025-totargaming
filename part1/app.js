@@ -87,7 +87,11 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 app.get('/api/walkrequests/open', async (req, res) => {
-  
-})
+  try {
+    const [req]
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch open walk requests' });
+  }
+});
 
 module.exports = app;
