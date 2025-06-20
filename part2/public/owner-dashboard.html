@@ -85,11 +85,11 @@
           duration_minutes: '',
           location: ''
         });
-
+        const dogs = ref([]);
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-
+        
         async function loadWalks() {
           try {
             const res = await fetch('/api/walks');
