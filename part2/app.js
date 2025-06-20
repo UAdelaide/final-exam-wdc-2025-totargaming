@@ -42,6 +42,7 @@ app.get('/api/dogs', async (req,res) => {
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
+});
 app.get('/owner-dashboard.html', requireLogin, requireRole('owner'), (req, res) => {
     res.render('owner-dashboard');
 });
