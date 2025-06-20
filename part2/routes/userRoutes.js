@@ -83,5 +83,6 @@ router.get('/my-dogs', async (req,res) => {
   }
   try {
     const [rows] = await db.query(`
+      SELECT d.dog_id, name
 
 module.exports = router;
