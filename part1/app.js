@@ -94,6 +94,9 @@ app.get("/api/walkers/summary", async (req, res) => {
       SELECT
     u.username                                   AS walker_username,
     IFNULL(r.total_ratings, 0)                   AS total_ratings,
+    r.average_rating,
+    IFNULL(c.completed_walks, 0)                 AS completed_walks
+FROM Users AS u
 
     `);
     res.json(summary);
