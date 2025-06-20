@@ -77,5 +77,6 @@ router.get('/logout', (req, res) => {
     res.redirect('/index.html'); // Redirect to the home page
   });
 });
+router.get()
 
 module.exports = router;
