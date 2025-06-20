@@ -76,6 +76,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.get('/api/dogs')
+app.get('/api/dogs', async (req, res) => {
+  try {
+
+  }
+});
 
 module.exports = app;
