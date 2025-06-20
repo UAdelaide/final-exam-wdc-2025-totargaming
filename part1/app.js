@@ -105,6 +105,7 @@ LEFT JOIN (
     FROM WalkRatings
     GROUP BY walker_id
 ) AS r  ON r.walker_id = u.user_id
+LEFT JOIN (
 
     `);
     res.json(summary);
