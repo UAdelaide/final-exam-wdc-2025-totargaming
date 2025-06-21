@@ -38,7 +38,7 @@ router.get('/me', (req, res) => {
 });
 
 // POST login has been modified to handle login functionality using username and password
-//
+// and handle redirecting to the appropriate dashboard based on the user's role
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) {
