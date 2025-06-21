@@ -59,9 +59,13 @@ app.get('/api/dogs', async (req,res) => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+// routes for the owner dashboard with requireLogin and requireRole middleware
 app.get('/owner-dashboard', requireLogin, requireRole('owner'), (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 });
+
+// routes for the walker dashboard with requireLogin and requireRole middleware
 app.get('/walker-dashboard', requireLogin, requireRole('walker'), (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'walker-dashboard.html'));
 });
