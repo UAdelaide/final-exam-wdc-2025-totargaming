@@ -22,12 +22,15 @@ app.use(session({
   cookie: { secure: false }
 }));
 
+// Middleware to check if user is logged in
 function requireLogin(req, res, next) {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
   return next();
 }
+
+// Middleware to check if user has the required role
 function requireRole(role) {
     return (req, res, next) => {
         if (!req.session.user || req.session.user.role !== role) {
