@@ -84,6 +84,9 @@ router.get('/logout', (req, res) => {
     return res.redirect('/'); // Redirect to the home page
   });
 });
+
+// GET my-dogs has been added to handle fetching the dogs owned by the logged-in owner
+// and returning them as a JSON response
 router.get('/my-dogs', async (req,res) => {
   if (!req.session.user || req.session.user.role !== 'owner') {
     return res.status(403).json({ error: 'Access denied' });
