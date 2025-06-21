@@ -37,7 +37,8 @@ router.get('/me', (req, res) => {
   return res.json(req.session.user);
 });
 
-// POST login has been
+// POST login has been modified to handle login functionality using username and password
+//
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) {
