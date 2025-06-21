@@ -54,6 +54,8 @@ app.get('/api/dogs', async (req,res) => {
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
 });
+
+// routes for the home page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
