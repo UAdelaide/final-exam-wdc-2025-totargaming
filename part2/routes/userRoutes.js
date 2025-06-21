@@ -72,6 +72,8 @@ router.post('/login', async (req, res) => {
     return res.status(500).json({ error: 'Login failed' });
   }
 });
+
+// GET logout has been added to handle logout functionality by destroying the session and redirecting to the home page
 router.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
