@@ -1,15 +1,17 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-// added express-session for session management
-const session = require('express-session');
+
 const db = require('./models/db');
 const app = express();
+
+// added express-session for session management
+const session = require('express-session');
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(express.static(path.join(__dirname, '/public')));
+
 
 
 // Configured and enabled the session middleware
