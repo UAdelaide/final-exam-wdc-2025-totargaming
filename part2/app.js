@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 
-// Configured and enabled the session middleware
+// configured and enabled the session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET || 'defaultsecret',
   resave: false,
@@ -22,7 +22,7 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-// Middleware to check if user is logged in
+// middleware to check if user is logged in
 function requireLogin(req, res, next) {
   if (!req.session.user) {
     return res.status(401).json({ error: 'Unauthorized' });
@@ -30,7 +30,7 @@ function requireLogin(req, res, next) {
   return next();
 }
 
-// Middleware to check if user has the required role
+// middleware to check if user has the required role
 function requireRole(role) {
     return (req, res, next) => {
         if (!req.session.user || req.session.user.role !== role) {
